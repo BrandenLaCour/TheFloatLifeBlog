@@ -1,20 +1,23 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
 
-import styles from './article-preview.module.css'
+import styles from "./article-preview.module.css";
 
 export default ({ article }) => (
   <div className={styles.preview}>
-    <Img alt="" fluid={article.heroImage.fluid} />
     <h3 className={styles.previewTitle}>
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+      <Link style={{ color: "black" }} to={`/blog/${article.slug}`}>
+        {article.title}
+      </Link>
     </h3>
+    <Img style={{ height: "100%" }} alt="" fluid={article.heroImage.fluid} />
+
     <small>{article.publishDate}</small>
-    <p
+    <small
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,
       }}
     />
   </div>
-)
+);

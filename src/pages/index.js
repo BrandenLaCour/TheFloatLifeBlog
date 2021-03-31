@@ -24,19 +24,23 @@ class RootIndex extends React.Component {
           <Hero data={author.node} />
 
           <div className="wrapper container">
-            <h2 className="section-headline">Blog Posts</h2>
+            <div className="main-titles-container">
+              <h2 className="section-headline">Blog Posts</h2>
+              <h2 className="section-headline">Categories</h2>
+            </div>
+
             <div className="container main-container">
-              <div className="container preview-container">
-                <ul className="article-list">
-                  {posts.map(({ node }) => {
-                    return (
-                      <li key={node.slug}>
-                        <ArticlePreview className="preview" article={node} />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+              <Container className="preview-container">
+                {posts.map(({ node }) => {
+                  return (
+                    <Row key={node.slug}>
+                      <Col>
+                        <ArticlePreview article={node} />
+                      </Col>
+                    </Row>
+                  );
+                })}
+              </Container>
               <Container>
                 <Row className="justify-content-around">
                   <Col lg={9} className="category">
@@ -90,7 +94,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              tracedSVG
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
