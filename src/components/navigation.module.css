@@ -15,6 +15,13 @@
   margin: 0 1em;
 }
 
+.navigationItemLogo {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1em;
+  float: left;
+}
+
 .navigationItem a {
   color: currentColor;
 }

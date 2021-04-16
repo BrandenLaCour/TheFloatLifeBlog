@@ -12,7 +12,7 @@ class Navigation extends React.Component {
     return (
       <nav role="navigation">
         <ul className={styles.navigation}>
-          <li className={styles.navigationItem}>
+          <li className={styles.navigationItemLogo}>
             <StaticQuery
               query={graphql`
                 query BlogQuery2 {

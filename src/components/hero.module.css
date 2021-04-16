@@ -14,8 +14,15 @@
 }
 
 .heroImageBlog {
-  max-width: 600px;
-  max-height: 850px;
+  max-width: 750px;
+  max-height: 500px;
+}
+
+@media screen and (min-width: 1600px) {
+  .heroImageBlog {
+    width: 750px;
+    height: 500px;
+  }
 }
 
 .heroDetails {

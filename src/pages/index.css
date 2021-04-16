@@ -9,7 +9,7 @@
 
 .preview-container {
   width: 60w;
-  border-right: 2px solid black;
+  border-right: 2px solid rgba(120, 120, 120, 0.5);
 }
 
 .article-list {
@@ -28,6 +28,12 @@
   margin-bottom: 30px;
 }
 
+.category:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+  transition-duration: 0.5s;
+}
+
 .preview-title {
   color: black;
 }
@@ -43,5 +49,14 @@
 }
 
 .category-border {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgba(120, 120, 120, 0.5);
+}
+
+.suggested-container {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.suggested {
+  border-bottom: 2px solid rgba(120, 120, 120, 0.5);
 }

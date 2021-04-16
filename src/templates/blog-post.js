@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component {
           </Container>
           <Container fluid>
             <Row className="justify-content-center">
-              <Col lg={6}>
+              <Col md={6} lg={8}>
                 <Img
                   className={heroStyles.heroImageBlog}
                   alt={post.title}
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
+        fluid(maxWidth: 1500, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }
       }

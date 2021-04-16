@@ -72,12 +72,21 @@ class RootIndex extends React.Component {
                     <h1>Everything Else</h1>
                   </Col>
                 </Row>
-                <div className="category-border"></div>
-                <Row className="justify-content-around mt-3">
-                  <Col lg={7} className="category">
-                    <h1>Everything Else</h1>
-                  </Col>
-                </Row>
+                <div className="category-border mb-4"></div>
+                <div className="suggested-container mb-3">
+                  <span className="suggested"> Suggested Articles</span>
+                </div>
+                {posts.map(({ node }) => {
+                  return (
+                    <Row className="justify-content-around" key={node.slug}>
+                      <Col lg={12}>
+                        {node.popular ? (
+                          <ArticlePreview article={node} />
+                        ) : null}
+                      </Col>
+                    </Row>
+                  );
+                })}
               </Container>
             </div>
           </div>
@@ -98,6 +107,13 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
+          popular
+          author {
+            ... on ContentfulAuthor {
+              id
+              author
+            }
+          }
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
