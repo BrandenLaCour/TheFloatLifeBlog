@@ -73,3 +73,35 @@ a {
 .list-inline li {
   display: inline-block;
 }
+
+@media screen and (max-height: 450px) {
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    max-height: 70%;
+    max-block-size: 70%;
+    position: absolute;
+  }
+}
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  margin-left: 160px;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+}

@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, "data.contentfulBlogPost");
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
-
+    const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
@@ -46,6 +46,12 @@ class BlogPostTemplate extends React.Component {
               }}
             />
           </div>
+          {iframe !== null ? (
+            <div
+              className="video-responsive"
+              dangerouslySetInnerHTML={{ __html: iframe }}
+            ></div>
+          ) : null}
         </div>
       </Layout>
     );
@@ -63,6 +69,9 @@ export const pageQuery = graphql`
         fluid(maxWidth: 1500, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }
+      }
+      youtubeVideo {
+        link
       }
       body {
         childMarkdownRemark {
