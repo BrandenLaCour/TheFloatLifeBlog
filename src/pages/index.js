@@ -21,7 +21,7 @@ class RootIndex extends React.Component {
         <div style={{ background: "#fff" }}>
           <Helmet title={siteTitle} />
 
-          <Hero data={author.node} />
+          <div className="blog-title">TFL Blog</div>
 
           <div className="wrapper container">
             <div className="main-titles-container">
@@ -34,7 +34,7 @@ class RootIndex extends React.Component {
                 {posts.map(({ node }) => {
                   return (
                     <Row key={node.slug}>
-                      <Col>
+                      <Col lg={12}>
                         <ArticlePreview article={node} />
                       </Col>
                     </Row>
@@ -68,6 +68,12 @@ class RootIndex extends React.Component {
                   </Col>
                 </Row>
                 <Row className="justify-content-around">
+                  <Col lg={7} className="category">
+                    <h1>Everything Else</h1>
+                  </Col>
+                </Row>
+                <div className="category-border"></div>
+                <Row className="justify-content-around mt-3">
                   <Col lg={7} className="category">
                     <h1>Everything Else</h1>
                   </Col>

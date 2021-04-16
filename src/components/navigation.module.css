@@ -18,3 +18,9 @@
 .navigationItem a {
   color: currentColor;
 }
+
+.heroImage {
+  height: 100px;
+  max-height: 200px;
+  background-color: black !important;
+}

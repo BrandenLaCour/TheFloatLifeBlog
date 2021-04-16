@@ -8,7 +8,7 @@
 }
 
 .preview-container {
-  width: 50vw;
+  width: 60w;
   border-right: 2px solid black;
 }
 
@@ -30,4 +30,18 @@
 
 .preview-title {
   color: black;
+}
+
+.heroImage {
+  height: 100px;
+  max-height: 200px;
+}
+
+.blog-title {
+  text-align: center;
+  font-size: 6rem;
+}
+
+.category-border {
+  border-bottom: 2px solid black;
 }
