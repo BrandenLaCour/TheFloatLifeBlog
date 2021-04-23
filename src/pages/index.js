@@ -49,7 +49,7 @@ const RootIndex = (props) => {
               <Row className="justify-content-around">
                 <Col
                   lg={9}
-                  onClick={() => dispatch({ type: "Safety and Awareness" })}
+                  onClick={() => dispatch({ type: "SAFETY_AND_AWARENESS" })}
                   className="category"
                 >
                   <Link
@@ -79,7 +79,7 @@ const RootIndex = (props) => {
                 <Col
                   lg={10}
                   onClick={() =>
-                    dispatch({ type: "Content Creation and Media" })
+                    dispatch({ type: "CONTENT_CREATION_AND_MEDIA" })
                   }
                   className="category"
                 >
@@ -94,7 +94,7 @@ const RootIndex = (props) => {
               <Row className="justify-content-around">
                 <Col lg={7} className="category">
                   <Link
-                    onClick={() => dispatch({ type: "From the Pros" })}
+                    onClick={() => dispatch({ type: "FROM_THE_PROS" })}
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
@@ -105,7 +105,7 @@ const RootIndex = (props) => {
               <Row className="justify-content-around">
                 <Col lg={7} className="category">
                   <Link
-                    onClick={() => dispatch({ type: "Tips and Tricks" })}
+                    onClick={() => dispatch({ type: "TIPS_AND_TRICKS" })}
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
@@ -116,7 +116,7 @@ const RootIndex = (props) => {
               <Row className="justify-content-around">
                 <Col lg={7} className="category">
                   <Link
-                    onClick={() => dispatch({ type: "Everything Else" })}
+                    onClick={() => dispatch({ type: "EVERYTHING_ELSE" })}
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >

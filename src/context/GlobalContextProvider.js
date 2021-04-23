@@ -12,13 +12,37 @@ function reducer(state, action) {
     case "ONEWHEEL_LIFESTYLE": {
       return {
         ...state,
-        category: action.type,
+        category: "Onewheel Lifestyle",
       };
     }
-    case "Tips and Tricks": {
+    case "TIPS_AND_TRICKS": {
       return {
         ...state,
-        category: action.type,
+        category: "Tips and Tricks",
+      };
+    }
+    case "CONTENT_CREATION_AND_MEDIA": {
+      return {
+        ...state,
+        category: "Content Creation and Media",
+      };
+    }
+    case "SAFETY_AND_AWARENESS": {
+      return {
+        ...state,
+        category: "Safety and Awareness",
+      };
+    }
+    case "FROM_THE_PROS": {
+      return {
+        ...state,
+        category: "From The Pros",
+      };
+    }
+    case "EVERYTHING_ELSE": {
+      return {
+        ...state,
+        category: "Everything Else",
       };
     }
     default:

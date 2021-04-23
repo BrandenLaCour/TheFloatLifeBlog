@@ -46,7 +46,8 @@ a {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
+  width: 70%;
+  /* display: grid; */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 5vmin;
 }
@@ -110,4 +111,9 @@ a {
   height: 80%;
   width: 80%;
   position: absolute;
+}
+
+.category-chosen {
+  display: flex;
+  justify-content: center;
 }

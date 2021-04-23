@@ -12,10 +12,19 @@ import {
 } from "../context/GlobalContextProvider";
 
 const Categories = (props) => {
-  const siteTitle = get(props, "data.site.siteMetadata.title");
-  const posts = get(props, "data.allContentfulBlogPost.edges");
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
+  const siteTitle = get(props, "data.site.siteMetadata.title");
+  const posts = get(props, "data.allContentfulBlogPost.edges");
+  const postsFiltered = posts.filter(({ node }) => {
+    if (
+      node.category !== null &&
+      node.category[0].category === state.category
+    ) {
+      return node;
+    }
+  });
+
   const categoriesNoDupe = [];
   const categories = get(props, "data.allContentfulCategories.edges").map(
     ({ node }) => {
@@ -63,21 +72,25 @@ const Categories = (props) => {
             })}
           </Container>
         </div>
-        <div className="wrapper">
-          <div>
-            <h2 className="section-headline">You Chose: {state.category}</h2>
+        <div className="wrapper ">
+          <div className="category-chosen">
+            <h2 className="section-headline">
+              You Chose: <span className="ml-4">{state.category}</span>
+            </h2>
           </div>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <div>
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
+          <div className="category-chosen">
+            <ul className="article-list">
+              {postsFiltered.map(({ node }) => {
+                return (
+                  <div>
+                    <li key={node.slug}>
+                      <ArticlePreview article={node} />
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </Layout>
@@ -95,6 +108,9 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
+          category {
+            category
+          }
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
