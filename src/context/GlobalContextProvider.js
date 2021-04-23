@@ -45,6 +45,12 @@ function reducer(state, action) {
         category: "Everything Else",
       };
     }
+    case "CATEGORY": {
+      return {
+        ...state,
+        category: action.payload,
+      };
+    }
     default:
       throw new Error("Bad action type");
   }

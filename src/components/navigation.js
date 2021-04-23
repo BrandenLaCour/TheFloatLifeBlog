@@ -61,7 +61,7 @@ const Navigation = (props) => {
           <Link to="/categories/">Categories</Link>
         </li>
         <li className={styles.navigationItem}>
-          <Link to="/blog/">Submit a Post</Link>
+          <Link to="/Submit/">Submit a Post</Link>
         </li>
       </ul>
     </nav>

@@ -50,7 +50,13 @@ const Categories = (props) => {
               if (cat !== null && i <= categoriesNoDupe.length / 2 - 1) {
                 return (
                   <Row className="justify-content-around">
-                    <Col className="category" lg={8}>
+                    <Col
+                      className="category"
+                      onClick={() =>
+                        dispatch({ type: "CATEGORY", payload: cat })
+                      }
+                      lg={8}
+                    >
                       <h2>{cat}</h2>
                     </Col>
                   </Row>
@@ -63,7 +69,13 @@ const Categories = (props) => {
               if (cat !== null && i > categoriesNoDupe.length / 2 - 1) {
                 return (
                   <Row className="justify-content-around">
-                    <Col className="category" lg={8}>
+                    <Col
+                      onClick={() =>
+                        dispatch({ type: "CATEGORY", payload: cat })
+                      }
+                      className="category"
+                      lg={8}
+                    >
                       <h2>{cat}</h2>
                     </Col>
                   </Row>
