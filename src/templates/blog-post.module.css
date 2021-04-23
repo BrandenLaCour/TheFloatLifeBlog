@@ -7,3 +7,13 @@
   margin: -1em -2.5em 1em;
   font-size: 2em; */
 }
+
+.categoryButtons {
+  width: 160px;
+  height: 60px;
+  margin-left: 80px;
+  font-size: 2rem;
+  color: black;
+  background-color: white;
+  margin-bottom: 40px;
+}
