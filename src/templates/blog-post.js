@@ -4,19 +4,24 @@ import { Helmet } from "react-helmet";
 import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import ArticlePreview from "../components/article-preview";
 import heroStyles from "../components/hero.module.css";
 import blogStyles from "./blog-post.module.css";
 
 class BlogPostTemplate extends React.Component {
-  render() {
+  state = {
+    posts: [],
+    filteredPostsMain: [],
+    filteredPostsRelated: [],
+    category: "",
+  };
+  componentDidMount() {
     const post = get(this.props, "data.contentfulBlogPost");
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
-    const siteTitle = get(this.props, "data.site.siteMetadata.title");
-    const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
     const postCategory =
       post.category !== null ? post.category[0].category : null;
+
     const matchedCategories = posts.filter(({ node }) => {
       if (
         node.category !== null &&
@@ -26,6 +31,38 @@ class BlogPostTemplate extends React.Component {
         return node;
       }
     });
+
+    this.setState({
+      posts,
+      filteredPostsMain: posts,
+      filteredPostsRelated: matchedCategories,
+    });
+  }
+
+  handleCategoryPopular = (e) => {
+    const posts = this.state.posts;
+    const filteredByCategory = posts.filter((post) => {
+      if (post.node.category !== null && post.node.popular === true) {
+        return post;
+      }
+    });
+    this.setState({ filteredPostsMain: filteredByCategory });
+  };
+
+  handleCategoryNew = (e) => {
+    const posts = this.state.posts;
+    const filteredByCategory = posts.filter((post) => {
+      if (post.node.category !== null && post.node.new === true) {
+        return post;
+      }
+    });
+  };
+
+  render() {
+    const post = get(this.props, "data.contentfulBlogPost");
+    const posts = get(this, "props.data.allContentfulBlogPost.edges");
+    const siteTitle = get(this.props, "data.site.siteMetadata.title");
+    const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
@@ -64,15 +101,55 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{ __html: iframe }}
             ></div>
           ) : null}
-          <div className=""></div>
 
           <div className="main-titles-container">
             <h2 className="section-headline">Related Blog Posts</h2>
             <h2 className="section-headline">Main Feed</h2>
           </div>
+          <div className="main-titles-container mb-4">
+            <div>
+              <Button
+                variant="dark"
+                value="new"
+                onClick={this.handleCategoryNew}
+                className={blogStyles.categoryButtons}
+              >
+                New
+              </Button>
+
+              <Button
+                variant="dark"
+                value="popular"
+                onClick={this.handleCategoryPopular}
+                className={blogStyles.categoryButtons}
+              >
+                Popular
+              </Button>
+            </div>
+
+            <div>
+              <Button
+                variant="dark"
+                value="new"
+                onClick={this.handleCategoryNew}
+                className={blogStyles.categoryButtons}
+              >
+                New
+              </Button>
+
+              <Button
+                variant="dark"
+                value="popular"
+                onClick={this.handleCategoryPopular}
+                className={blogStyles.categoryButtons}
+              >
+                Popular
+              </Button>
+            </div>
+          </div>
           <div className="container main-container">
             <Container className="preview-container">
-              {matchedCategories.map(({ node }) => {
+              {this.state.filteredPostsRelated.map(({ node }) => {
                 return (
                   <Row key={node.slug}>
                     <Col lg={12}>
@@ -84,7 +161,7 @@ class BlogPostTemplate extends React.Component {
             </Container>
 
             <Container className="preview-container">
-              {posts.map(({ node }) => {
+              {this.state.filteredPostsMain.map(({ node }) => {
                 if (node.title !== post.title) {
                   return (
                     <Row key={node.slug}>
@@ -109,7 +186,6 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1500, background: "rgb:000000") {
@@ -122,7 +198,6 @@ export const pageQuery = graphql`
       youtubeVideo {
         link
       }
-
       body {
         childMarkdownRemark {
           html
@@ -136,7 +211,6 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
-
           popular
           category {
             category
