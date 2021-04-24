@@ -186,7 +186,6 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1500, background: "rgb:000000") {
@@ -199,7 +198,6 @@ export const pageQuery = graphql`
       youtubeVideo {
         link
       }
-
       body {
         childMarkdownRemark {
           html
@@ -213,7 +211,6 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
-
           popular
           category {
             category

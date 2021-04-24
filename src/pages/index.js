@@ -175,7 +175,6 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
-
           popular
           author {
             ... on ContentfulAuthor {
