@@ -109,7 +109,7 @@ class BlogPostTemplate extends React.Component {
           <div className="main-titles-container mb-4">
             <div>
               <Button
-                variant="dark"
+                variant="light"
                 value="new"
                 onClick={this.handleCategoryNew}
                 className={blogStyles.categoryButtons}

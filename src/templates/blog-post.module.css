@@ -13,7 +13,12 @@
   height: 60px;
   margin-left: 80px;
   font-size: 2rem;
+  color: white;
+  background-color: black;
+  margin-bottom: 40px;
+}
+
+.categoryButtons:hover {
   color: black;
   background-color: white;
-  margin-bottom: 40px;
 }

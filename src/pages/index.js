@@ -60,7 +60,6 @@ const RootIndex = (props) => {
                   <Link
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
-                    value="whoa"
                   >
                     <h1>Safety and Awareness</h1>
                   </Link>

@@ -11,8 +11,9 @@ export default ({ article }) => (
         {article.title}
       </Link>
     </h3>
-    <Img style={{ height: "100%" }} alt="" fluid={article.heroImage.fluid} />
-
+    <Link style={{ color: "black" }} to={`/blog/${article.slug}`}>
+      <Img style={{ height: "100%" }} alt="" fluid={article.heroImage.fluid} />
+    </Link>
     <small>{article.publishDate}</small>
     <small
       dangerouslySetInnerHTML={{
