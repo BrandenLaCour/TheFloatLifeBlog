@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap"); */
 
 @font-face {
   font-family: "Avenir";
@@ -8,8 +8,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Evogria";
+  src: local("Evogria"), url("../fonts/Evogria.otf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "EvogriaItalic";
+  src: local("EvogriaItalic"),
+    url("../fonts/EvogriaItalic.otf") format("truetype");
+  font-weight: normal;
+}
+
 body {
-  font-family: "Bangers", cursive !important;
+  font-family: "Evogria" !important;
   font-size: 1em;
   line-height: 1.65;
   color: #373f49;

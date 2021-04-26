@@ -48,7 +48,7 @@ const RootIndex = (props) => {
             <Container>
               <Row className="justify-content-around">
                 <Col
-                  lg={9}
+                  lg={10}
                   onClick={() =>
                     dispatch({
                       type: "CATEGORY",
@@ -61,7 +61,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>Safety and Awareness</h1>
+                    <h3>Safety and Awareness</h3>
                   </Link>
                 </Col>
               </Row>
@@ -80,7 +80,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>Onewheel Lifestyle</h1>
+                    <h3>Onewheel Lifestyle</h3>
                   </Link>
                 </Col>
               </Row>
@@ -99,7 +99,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>Content Creation and Media</h1>
+                    <h3>Content Creation and Media</h3>
                   </Link>
                 </Col>
               </Row>
@@ -112,7 +112,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>From the Pros</h1>
+                    <h3>From the Pros</h3>
                   </Link>
                 </Col>
               </Row>
@@ -125,7 +125,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>Tips and Tricks</h1>
+                    <h3>Tips and Tricks</h3>
                   </Link>
                 </Col>
               </Row>
@@ -138,7 +138,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h1>Everything Else</h1>
+                    <h3>Everything Else</h3>
                   </Link>
                 </Col>
               </Row>

@@ -14,7 +14,9 @@ const Submit = (props) => {
     <Layout location={props.location}>
       <div style={{ background: "#fff" }}>
         <div className="blog-title">Submit A Post </div>
-        <div className="container category-chosen">(Coming Soon)</div>
+        <div className="container category-chosen">
+          <h3>Email Bodhi@TheFloat.Life to submit your blog post! :)</h3>
+        </div>
       </div>
     </Layout>
   );

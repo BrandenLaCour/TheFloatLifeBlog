@@ -60,6 +60,7 @@ class BlogPostTemplate extends React.Component {
 
   render() {
     const post = get(this.props, "data.contentfulBlogPost");
+
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
     const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
@@ -70,8 +71,25 @@ class BlogPostTemplate extends React.Component {
           <Container className={blogStyles.hero} fluid>
             <h1 className="section-headline mt-4">{post.title}</h1>
           </Container>
+
+          <Container className={blogStyles.authorContainer}>
+            <Row className={blogStyles.authorWidget}>
+              <Col>
+                <Img
+                  className={heroStyles.heroImageAuthor}
+                  alt={post.title}
+                  fluid={post.author.profilePicture.fluid}
+                />
+              </Col>
+            </Row>
+            <Row className="d-flex flex-column ">
+              <Col>{post.author.name}</Col>
+              <Col>{post.publishDate}</Col>
+            </Row>
+          </Container>
+
           <Container fluid>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center mb-2">
               <Col md={6} lg={8}>
                 <Img
                   className={heroStyles.heroImageBlog}
@@ -81,14 +99,11 @@ class BlogPostTemplate extends React.Component {
               </Col>
             </Row>
           </Container>
+          <Container className="d-flex justify-content-center mt-3">
+            <div className={blogStyles.heroImageSeperator}></div>
+          </Container>
+
           <div className="wrapper">
-            <p
-              style={{
-                display: "block",
-              }}
-            >
-              {post.publishDate}
-            </p>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
@@ -186,6 +201,14 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      author {
+        name
+        profilePicture {
+          fluid(maxWidth: 1500, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+      }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1500, background: "rgb:000000") {

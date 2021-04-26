@@ -22,3 +22,19 @@
   color: black;
   background-color: white;
 }
+
+.authorContainer {
+  display: flex;
+  margin-bottom: 15px;
+  margin-left: 15vw;
+  font-family: "EvogriaItalic" !important;
+}
+
+.authorWidget {
+  width: 8vw;
+}
+
+.heroImageSeperator {
+  border-bottom: 1px solid #ddd;
+  width: 60vw;
+}

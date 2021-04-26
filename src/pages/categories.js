@@ -55,9 +55,9 @@ const Categories = (props) => {
                       onClick={() =>
                         dispatch({ type: "CATEGORY", payload: cat })
                       }
-                      lg={8}
+                      lg={9}
                     >
-                      <h2>{cat}</h2>
+                      <h3>{cat}</h3>
                     </Col>
                   </Row>
                 );
@@ -74,9 +74,9 @@ const Categories = (props) => {
                         dispatch({ type: "CATEGORY", payload: cat })
                       }
                       className="category"
-                      lg={8}
+                      lg={9}
                     >
-                      <h2>{cat}</h2>
+                      <h3>{cat}</h3>
                     </Col>
                   </Row>
                 );

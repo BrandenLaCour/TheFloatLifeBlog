@@ -2,6 +2,7 @@ import React from "react";
 import "./base.css";
 import Container from "./container";
 import Navigation from "./navigation";
+import "../fonts/Evogria.otf";
 import GlobalContextProvider from "../context/GlobalContextProvider";
 
 class Template extends React.Component {

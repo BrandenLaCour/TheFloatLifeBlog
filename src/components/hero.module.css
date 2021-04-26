@@ -18,6 +18,12 @@
   max-height: 500px;
 }
 
+.heroImageAuthor {
+  max-width: 70px;
+  max-height: 80px;
+  border-radius: 60px;
+}
+
 @media screen and (min-width: 1600px) {
   .heroImageBlog {
     width: 750px;
