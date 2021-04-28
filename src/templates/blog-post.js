@@ -50,18 +50,12 @@ class BlogPostTemplate extends React.Component {
   };
 
   handleCategoryNew = (e) => {
-    const posts = this.state.posts;
-    const filteredByCategory = posts.filter((post) => {
-      if (post.node.category !== null && post.node.new === true) {
-        return post;
-      }
-    });
+    const posts = get(this, "props.data.allContentfulBlogPost.edges");
+    this.setState({ filteredPostsMain: posts });
   };
 
   render() {
     const post = get(this.props, "data.contentfulBlogPost");
-
-    const posts = get(this, "props.data.allContentfulBlogPost.edges");
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
     const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
     return (
@@ -87,7 +81,6 @@ class BlogPostTemplate extends React.Component {
               <Col>{post.publishDate}</Col>
             </Row>
           </Container>
-
           <Container fluid>
             <Row className="justify-content-center mb-2">
               <Col md={6} lg={8}>
@@ -124,7 +117,7 @@ class BlogPostTemplate extends React.Component {
           <div className="main-titles-container mb-4">
             <div>
               <Button
-                variant="light"
+                variant="dark"
                 value="new"
                 onClick={this.handleCategoryNew}
                 className={blogStyles.categoryButtons}
