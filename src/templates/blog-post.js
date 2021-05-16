@@ -37,32 +37,66 @@ class BlogPostTemplate extends React.Component {
       posts,
       filteredPostsMain: posts,
       filteredPostsRelated: matchedCategories,
+      category: postCategory,
     });
   }
 
   handleCategoryPopular = (e) => {
     const posts = this.state.posts;
-    const filteredByCategory = posts.filter((post) => {
-      if (post.node.category !== null && post.node.popular === true) {
-        return post;
-      }
-    });
 
-    this.setState({
-      filteredPostsMain: filteredByCategory,
-      filter: e.target.value,
-    });
+    if (e.target.value === "popularR") {
+      const filteredByCategory = posts.filter((post) => {
+        if (post.node.category !== null && post.node.popular === true) {
+          return post;
+        }
+      });
+      this.setState({
+        filteredPostsMain: filteredByCategory,
+        filter: e.target.value,
+      });
+    } else {
+      const filteredByRelated = posts.filter((post) => {
+        if (
+          post.node.category !== null &&
+          post.node.popular === true &&
+          post.node.category[0].category === this.state.category
+        ) {
+          return post;
+        }
+      });
+      this.setState({
+        filteredPostsRelated: filteredByRelated,
+        filter: e.target.value,
+      });
+    }
   };
 
   handleCategoryNew = (e) => {
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
-    this.setState({ filteredPostsMain: posts, filter: e.target.value });
+    if (e.target.value === "newR") {
+      this.setState({ filteredPostsMain: posts, filter: e.target.value });
+    } else {
+      const filteredByRelated = posts.filter((post) => {
+        if (
+          post.node.category !== null &&
+          post.node.category[0].category === this.state.category
+        ) {
+          return post;
+        }
+      });
+
+      this.setState({
+        filteredPostsRelated: filteredByRelated,
+        filter: e.target.value,
+      });
+    }
   };
 
   render() {
     const post = get(this.props, "data.contentfulBlogPost");
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
     const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
+    console.log(post);
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
