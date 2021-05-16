@@ -34,6 +34,40 @@
   border: 5px solid rgba(235, 234, 234, 0.5);
 }
 
+@media screen and (max-width: 800px) {
+  .section-headline {
+    padding: 0 0 0.4em 0;
+    margin: 0 0 5vmin 0;
+    font-size: 1.75rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .section-headline-blog {
+    padding: 0 0 0.4em 0;
+    margin: 0 0 5vmin 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .categoryButtons {
+    width: 120px;
+    height: 60px;
+    margin-left: 50px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    margin-bottom: 40px;
+  }
+  .categoryButtonsPicked {
+    width: 120px;
+    height: 60px;
+    margin-left: 50px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    margin-bottom: 40px;
+    border: 5px solid rgba(235, 234, 234, 0.5);
+  }
+}
+
 .authorContainer {
   display: flex;
   margin-bottom: 15px;

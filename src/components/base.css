@@ -87,6 +87,12 @@ a {
     font-size: 1.75rem;
     border-bottom: 1px solid #ddd;
   }
+  .section-headline-blog {
+    padding: 0 0 0.4em 0;
+    margin: 0 0 5vmin 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #ddd;
+  }
 }
 
 /**
@@ -102,7 +108,7 @@ a {
   display: inline-block;
 }
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .video-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -114,6 +120,25 @@ a {
     left: 0;
     top: 0;
     max-height: 70%;
+    max-block-size: 70%;
+    position: absolute;
+  }
+} */
+
+@media screen and (max-height: 900px) {
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    right: 135px;
+    width: 110%;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 70%;
     max-block-size: 70%;
     position: absolute;
   }

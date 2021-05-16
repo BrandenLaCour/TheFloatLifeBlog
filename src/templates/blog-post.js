@@ -81,7 +81,7 @@ class BlogPostTemplate extends React.Component {
                 />
               </Col>
             </Row>
-            <Row className="d-flex flex-column ">
+            <Row className="d-flex flex-column author">
               <Col>{post.author.name}</Col>
               <Col>{post.publishDate}</Col>
             </Row>
@@ -101,8 +101,9 @@ class BlogPostTemplate extends React.Component {
             <div className={blogStyles.heroImageSeperator}></div>
           </Container>
 
-          <div className="wrapper">
+          <div className="wrapper blog-desc">
             <div
+              className="blog-body"
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
@@ -116,8 +117,8 @@ class BlogPostTemplate extends React.Component {
           ) : null}
 
           <div className="main-titles-container">
-            <h2 className="section-headline">Related Blog Posts</h2>
-            <h2 className="section-headline">Main Feed</h2>
+            <h2 className="section-headline-blog">Related Blog Posts</h2>
+            <h2 className="section-headline-blog">Main Feed</h2>
           </div>
           <div className="main-titles-container mb-4">
             <div>

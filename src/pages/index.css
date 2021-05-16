@@ -52,6 +52,7 @@
 }
 .suggested {
   border-bottom: 2px solid rgba(120, 120, 120, 0.5);
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 800px) {
@@ -66,6 +67,13 @@
   .suggested {
     border-bottom: 2px solid rgba(120, 120, 120, 0.5);
     font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .author {
+    margin-left: 40px;
+  }
+  .blog-desc {
+    font-size: 0.8em;
   }
 }
 

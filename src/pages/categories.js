@@ -57,7 +57,7 @@ const Categories = (props) => {
                       }
                       lg={9}
                     >
-                      <h3>{cat}</h3>
+                      <h3 className={"cat-title"}>{cat}</h3>
                     </Col>
                   </Row>
                 );
@@ -76,7 +76,7 @@ const Categories = (props) => {
                       className="category"
                       lg={9}
                     >
-                      <h3>{cat}</h3>
+                      <h3 className={"cat-title"}>{cat}</h3>
                     </Col>
                   </Row>
                 );
@@ -86,7 +86,7 @@ const Categories = (props) => {
         </div>
         <div className="wrapper ">
           <div className="category-chosen">
-            <h2 className="section-headline">
+            <h2 className="suggested">
               You Chose: <span className="ml-4">{state.category}</span>
             </h2>
           </div>
