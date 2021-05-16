@@ -13,6 +13,10 @@ class Template extends React.Component {
       <Container>
         <Navigation />
         {children}
+        <div className="copywright mt-3 mb-3">
+          <span className="mr-2">© 2021 The Float life</span> ||{" "}
+          <span className="ml-2">Built with stoke by Branden LaCour</span>
+        </div>
       </Container>
     );
   }

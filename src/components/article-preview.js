@@ -14,8 +14,9 @@ export default ({ article }) => (
     <Link style={{ color: "black" }} to={`/blog/${article.slug}`}>
       <Img style={{ height: "100%" }} alt="" fluid={article.heroImage.fluid} />
     </Link>
-    <small>{article.publishDate}</small>
+    <small className={styles.previewDesc}>{article.publishDate}</small>
     <small
+      className={styles.previewDesc}
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,
       }}

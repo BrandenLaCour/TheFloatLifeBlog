@@ -12,3 +12,12 @@
   border: 1px solid #a0a0a0;
   margin-right: 0.5em;
 }
+
+@media screen and (max-width: 800px) {
+  .previewTitle {
+    font-size: 1.2em;
+  }
+  .previewDesc {
+    font-size: 0.7em;
+  }
+}

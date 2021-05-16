@@ -80,6 +80,15 @@ a {
   font-size: 3rem;
 }
 
+@media screen and (max-width: 800px) {
+  .section-headline {
+    padding: 0 0 0.4em 0;
+    margin: 0 0 5vmin 0;
+    font-size: 1.75rem;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
 /**
  *
  */
@@ -128,4 +137,9 @@ a {
 .category-chosen {
   display: flex;
   justify-content: center;
+}
+
+.copywright {
+  text-align: center;
+  font-size: small;
 }

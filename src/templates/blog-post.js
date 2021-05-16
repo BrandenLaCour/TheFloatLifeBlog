@@ -15,6 +15,7 @@ class BlogPostTemplate extends React.Component {
     filteredPostsMain: [],
     filteredPostsRelated: [],
     category: "",
+    filter: "newR",
   };
   componentDidMount() {
     const post = get(this.props, "data.contentfulBlogPost");
@@ -46,12 +47,16 @@ class BlogPostTemplate extends React.Component {
         return post;
       }
     });
-    this.setState({ filteredPostsMain: filteredByCategory });
+
+    this.setState({
+      filteredPostsMain: filteredByCategory,
+      filter: e.target.value,
+    });
   };
 
   handleCategoryNew = (e) => {
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
-    this.setState({ filteredPostsMain: posts });
+    this.setState({ filteredPostsMain: posts, filter: e.target.value });
   };
 
   render() {
@@ -118,18 +123,26 @@ class BlogPostTemplate extends React.Component {
             <div>
               <Button
                 variant="dark"
-                value="new"
+                value="newL"
                 onClick={this.handleCategoryNew}
-                className={blogStyles.categoryButtons}
+                className={
+                  this.state.filter === "newL"
+                    ? blogStyles.categoryButtonsPicked
+                    : blogStyles.categoryButtons
+                }
               >
                 New
               </Button>
 
               <Button
                 variant="dark"
-                value="popular"
+                value="popularL"
                 onClick={this.handleCategoryPopular}
-                className={blogStyles.categoryButtons}
+                className={
+                  this.state.filter === "popularL"
+                    ? blogStyles.categoryButtonsPicked
+                    : blogStyles.categoryButtons
+                }
               >
                 Popular
               </Button>
@@ -138,18 +151,26 @@ class BlogPostTemplate extends React.Component {
             <div>
               <Button
                 variant="dark"
-                value="new"
+                value="newR"
                 onClick={this.handleCategoryNew}
-                className={blogStyles.categoryButtons}
+                className={
+                  this.state.filter === "newR"
+                    ? blogStyles.categoryButtonsPicked
+                    : blogStyles.categoryButtons
+                }
               >
                 New
               </Button>
 
               <Button
                 variant="dark"
-                value="popular"
+                value="popularR"
                 onClick={this.handleCategoryPopular}
-                className={blogStyles.categoryButtons}
+                className={
+                  this.state.filter === "popularR"
+                    ? blogStyles.categoryButtonsPicked
+                    : blogStyles.categoryButtons
+                }
               >
                 Popular
               </Button>

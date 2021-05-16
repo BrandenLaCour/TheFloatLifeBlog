@@ -49,6 +49,7 @@ const RootIndex = (props) => {
               <Row className="justify-content-around">
                 <Col
                   lg={10}
+                  xs={7}
                   onClick={() =>
                     dispatch({
                       type: "CATEGORY",
@@ -61,13 +62,14 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>Safety and Awareness</h3>
+                    <h3 className="cat-title">Safety and Awareness</h3>
                   </Link>
                 </Col>
               </Row>
               <Row className="justify-content-around">
                 <Col
                   lg={7}
+                  xs={7}
                   onClick={() =>
                     dispatch({
                       type: "CATEGORY",
@@ -80,13 +82,14 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>Onewheel Lifestyle</h3>
+                    <h3 className="cat-title">Onewheel Lifestyle</h3>
                   </Link>
                 </Col>
               </Row>
               <Row className="justify-content-around">
                 <Col
                   lg={10}
+                  xs={7}
                   onClick={() =>
                     dispatch({
                       type: "CATEGORY",
@@ -99,12 +102,12 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>Content Creation and Media</h3>
+                    <h3 className="cat-title">Content Creation and Media</h3>
                   </Link>
                 </Col>
               </Row>
               <Row className="justify-content-around">
-                <Col lg={7} className="category">
+                <Col lg={7} xs={7} className="category">
                   <Link
                     onClick={() =>
                       dispatch({ type: "CATEGORY", payload: "From The Pros" })
@@ -112,12 +115,12 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>From the Pros</h3>
+                    <h3 className="cat-title">From the Pros</h3>
                   </Link>
                 </Col>
               </Row>
               <Row className="justify-content-around">
-                <Col lg={7} className="category">
+                <Col lg={7} xs={7} className="category">
                   <Link
                     onClick={() =>
                       dispatch({ type: "CATEGORY", payload: "Tips and Tricks" })
@@ -125,12 +128,12 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>Tips and Tricks</h3>
+                    <h3 className="cat-title">Tips and Tricks</h3>
                   </Link>
                 </Col>
               </Row>
               <Row className="justify-content-around">
-                <Col lg={7} className="category">
+                <Col lg={7} xs={7} className="category">
                   <Link
                     onClick={() =>
                       dispatch({ type: "CATEGORY", payload: "Everything Else" })
@@ -138,7 +141,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3>Everything Else</h3>
+                    <h3 className="cat-title">Everything Else</h3>
                   </Link>
                 </Col>
               </Row>
