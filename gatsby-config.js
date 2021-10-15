@@ -48,5 +48,22 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/images/FloatCircle.ico',
+        appName: 'The Float Life Blog',
+        background: '#fff',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: true
+        }
+      }
+    }
   ],
 };
