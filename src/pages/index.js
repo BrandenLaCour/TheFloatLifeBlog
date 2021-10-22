@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Layout from "../components/layout";
+import favicon from "../images/favicon.ico"
 import ArticlePreview from "../components/article-preview";
 import {
   GlobalDispatchContext,
