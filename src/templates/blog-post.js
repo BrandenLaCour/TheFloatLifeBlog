@@ -8,6 +8,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import ArticlePreview from "../components/article-preview";
 import heroStyles from "../components/hero.module.css";
 import blogStyles from "./blog-post.module.css";
+import logo from "../images/FloatCircle.ico"
 
 class BlogPostTemplate extends React.Component {
   state = {
@@ -101,6 +102,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Helmet title={`${post.title}`} />
+          <link rel="apple-touch-icon" sizes="128x128" href={logo}></link>
           <Container className={blogStyles.hero} fluid>
             <h1 className="section-headline mt-4">{post.title}</h1>
           </Container>

@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Layout from "../components/layout";
-import favicon from "../images/favicon.ico"
+import logo from "../images/FloatCircle.ico"
 import ArticlePreview from "../components/article-preview";
 import {
   GlobalDispatchContext,
@@ -25,7 +25,7 @@ const RootIndex = (props) => {
     <Layout location={props.location}>
       <div style={{ background: "#fff" }}>
         <Helmet title={siteTitle} />
-        <link rel="apple-touch-icon" sizes="128x128" href={favicon}></link>
+        <link rel="apple-touch-icon" sizes="128x128" href={logo}></link>
 
         <div className="blog-title">TFL Blog</div>
 
