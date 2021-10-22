@@ -96,11 +96,11 @@ class BlogPostTemplate extends React.Component {
     const post = get(this.props, "data.contentfulBlogPost");
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
     const iframe = post.youtubeVideo ? post.youtubeVideo.link : null;
-    console.log(post);
+  
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
+          <Helmet title={`${post.title}`} />
           <Container className={blogStyles.hero} fluid>
             <h1 className="section-headline mt-4">{post.title}</h1>
           </Container>
