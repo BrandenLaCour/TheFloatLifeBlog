@@ -24,6 +24,7 @@ const RootIndex = (props) => {
     <Layout location={props.location}>
       <div style={{ background: "#fff" }}>
         <Helmet title={siteTitle} />
+        <link rel="apple-touch-icon" sizes="128x128" href={favicon}></link>
 
         <div className="blog-title">TFL Blog</div>
 
