@@ -254,14 +254,14 @@ export const pageQuery = graphql`
         name
         profilePicture {
           fluid(maxWidth: 1500, resizingBehavior: SCALE) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
         }
       }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxWidth: 1500, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
       category {
@@ -295,7 +295,7 @@ export const pageQuery = graphql`
           }
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {

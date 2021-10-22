@@ -186,7 +186,7 @@ export const pageQuery = graphql`
           }
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {
@@ -207,7 +207,7 @@ export const pageQuery = graphql`
           title
           heroImage: image {
             fluid(maxWidth: 600, maxHeight: 100, resizingBehavior: PAD) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }

@@ -29,7 +29,7 @@ const Navigation = (props) => {
                           maxHeight: 100
                           resizingBehavior: PAD
                         ) {
-                          ...GatsbyContentfulFluid_tracedSVG
+                          ...GatsbyContentfulFluid
                         }
                       }
                     }
