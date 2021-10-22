@@ -45,6 +45,17 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Float Life`,
+        short_name: `TFL`,
+        icon: `src/images/floatLogo.png`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     }
