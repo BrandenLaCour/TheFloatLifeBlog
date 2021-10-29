@@ -135,7 +135,7 @@ class BlogPostTemplate extends React.Component {
             <div className={blogStyles.heroImageSeperator}></div>
           </Container>
 
-          <div className="wrapper blog-desc">
+          <div style={{fontFamily: "Avenir"}} className="wrapper blog-desc">
             <div
               className="blog-body"
               dangerouslySetInnerHTML={{

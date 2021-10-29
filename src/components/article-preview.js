@@ -17,6 +17,7 @@ export default ({ article }) => (
     <small className={styles.previewDesc}>{article.publishDate}</small>
     <small
       className={styles.previewDesc}
+      style={{fontFamily: "Avenir"}}
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,
       }}
