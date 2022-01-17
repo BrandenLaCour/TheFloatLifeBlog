@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import { Container, Row, Col } from "react-bootstrap";
 import get from "lodash/get";
 import { Helmet } from "react-helmet";
+import Banner from "../../static/logo-banner.jpg"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -24,7 +25,6 @@ const RootIndex = (props) => {
     <Layout location={props.location}>
       <div style={{ background: "#fff" }}>
         <Helmet title={siteTitle} />
-
         <div className="blog-title">TFL Blog</div>
 
         <div className="wrapper container">
@@ -62,7 +62,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">Safety and Awareness</h3>
+                    <h4 className="cat-title">Safety and Awareness</h4>
                   </Link>
                 </Col>
               </Row>
@@ -82,7 +82,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">Onewheel Lifestyle</h3>
+                    <h4 className="cat-title">Onewheel Lifestyle</h4>
                   </Link>
                 </Col>
               </Row>
@@ -102,7 +102,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">Content Creation and Media</h3>
+                    <h4 className="cat-title">Content Creation and Media</h4>
                   </Link>
                 </Col>
               </Row>
@@ -115,7 +115,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">From the Pros</h3>
+                    <h4 className="cat-title">From the Pros</h4>
                   </Link>
                 </Col>
               </Row>
@@ -128,7 +128,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">Tips and Tricks</h3>
+                    <h4 className="cat-title">Tips and Tricks</h4>
                   </Link>
                 </Col>
               </Row>
@@ -141,7 +141,7 @@ const RootIndex = (props) => {
                     style={{ textDecoration: "none", color: "white" }}
                     to="/categories/"
                   >
-                    <h3 className="cat-title">Everything Else</h3>
+                    <h4 className="cat-title">Everything Else</h4>
                   </Link>
                 </Col>
               </Row>
