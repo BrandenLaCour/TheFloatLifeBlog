@@ -2,7 +2,7 @@
 
 Created for The Float Life to be able to write blog posts without needing to know how to code to update it! 
 
-Utlitizing Gatsby, GraphQL, React, and Contentful as the CMS.
+Utilizing Gatsby, GraphQL, React, and Contentful as the CMS.
 
 ## Website
 
